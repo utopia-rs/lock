@@ -1,0 +1,18 @@
+[package]
+name = "utopia-lock"
+description = "Locks with utopia-php/lock semantics: Redis leases (Distributed), in-process Mutex and Semaphore, and flock(2) files."
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "BSD-3-Clause"
+
+[dependencies]
+getrandom = "0.3"
+php-std = { version = "0.1.0", git = "https://github.com/utopia-rs/php-std" }
+redis = { version = "0.32", default-features = false, features = ["tokio-comp", "aio", "connection-manager", "script"] }
+rustix = { version = "1", default-features = false, features = ["std", "fs", "system"] }
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "rt"] }
