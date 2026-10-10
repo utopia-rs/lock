@@ -1,6 +1,6 @@
 [package]
 name = "utopia-lock"
-description = "Locks with utopia-php/lock semantics: Redis leases (Distributed), in-process Mutex and Semaphore, and flock(2) files."
+description = "Locks: Redis leases across hosts, in-process mutexes and semaphores, and file locks across processes."
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.88"
@@ -16,3 +16,6 @@ tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time",
 
 [dev-dependencies]
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "rt"] }
+
+[package.metadata.utopia]
+php-sync = "d1a30c9fb3a2bafa82e9c9644c765657ef13c9bf"
